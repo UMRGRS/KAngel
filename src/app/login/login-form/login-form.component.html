@@ -1,0 +1,18 @@
+<section class="login-form">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            <h2 class="section-heading">Inicia sesión</h2>
+            <form [formGroup]="loginForm" (submit)="submitApplication()">
+                <mat-form-field>
+                    <mat-label>Usuario</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <button mat-raised-button>Iniciar sesión</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</section>

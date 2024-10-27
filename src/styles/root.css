@@ -1,0 +1,72 @@
+:root,
+:host {
+    --sys-background: #11140f;
+    --sys-on-background: #e1e4da;
+    --sys-surface: #11140f;
+    --sys-surface-dim: #11140f;
+    --sys-surface-bright: #363a34;
+    --sys-surface-container-lowest: #0c0f0a;
+    --sys-surface-container-low: #191d17;
+    --sys-surface-container: #1d211b;
+    --sys-surface-container-high: #272b25;
+    --sys-surface-container-highest: #32362f;
+    --sys-on-surface: #e1e4da;
+    --sys-surface-variant: #43483f;
+    --sys-on-surface-variant: #c3c8bc;
+    --sys-inverse-surface: #e1e4da;
+    --sys-inverse-on-surface: #2e322b;
+    --sys-outline: #8d9387;
+    --sys-outline-variant: #43483f;
+    --sys-shadow: #000000;
+    --sys-scrim: #000000;
+    --sys-surface-tint: #81d5ca;
+    --sys-primary: #81d5ca;
+    --sys-on-primary: #003732;
+    --sys-primary-container: #005049;
+    --sys-on-primary-container: #9df2e6;
+    --sys-inverse-primary: #006a62;
+    --sys-secondary: #99d4a2;
+    --sys-on-secondary: #003917;
+    --sys-secondary-container: #19512a;
+    --sys-on-secondary-container: #b5f1bd;
+    --sys-tertiary: #ebb5ed;
+    --sys-on-tertiary: #48204e;
+    --sys-tertiary-container: #613766;
+    --sys-on-tertiary-container: #ffd6fe;
+    --sys-error: #ffb597;
+    --sys-on-error: #552007;
+    --sys-error-container: #71361b;
+    --sys-on-error-container: #ffdbcd;
+    --sys-neutral: #747870;
+    --sys-neutral-variant: #73796e;
+    --sys-primary-fixed: #9df2e6;
+    --sys-primary-fixed-dim: #81d5ca;
+    --sys-on-primary-fixed: #00201d;
+    --sys-on-primary-fixed-variant: #005049;
+    --sys-secondary-fixed: #b5f1bd;
+    --sys-secondary-fixed-dim: #99d4a2;
+    --sys-on-secondary-fixed: #00210b;
+    --sys-on-secondary-fixed-variant: #19512a;
+    --sys-tertiary-fixed: #ffd6fe;
+    --sys-tertiary-fixed-dim: #ebb5ed;
+    --sys-on-tertiary-fixed: #310938;
+    --sys-on-tertiary-fixed-variant: #613766;
+    --sys-inverse-secondary: #336940;
+    --sys-inverse-tertiary: #7b4e7f;
+    --sys-inverse-error: #8e4d30;
+    --sys-error-fixed: #ffdbcd;
+    --sys-error-fixed-dim: #ffb597;
+    --sys-on-error-fixed: #360f00;
+    --sys-on-error-fixed-variant: #71361b;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #11140f;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {
+    background-color: #AAC0AA;
+}
+
+mat-card-content {
+    text-align: start;
+    margin: 15px 30px 15px 30px;
+}
