@@ -3,7 +3,7 @@ form {
     flex-direction: column;
 }
 
-mat-card {
+.login-form {
     background-color: #AAC0AA;
 }
 

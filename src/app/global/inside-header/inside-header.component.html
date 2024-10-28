@@ -1,0 +1,15 @@
+<mat-toolbar class="mat-elevation-z6">
+    <img src="assets/gear.svg" class="header-icon">
+    <span>Lubetec</span>
+    <span class="spacer"></span>
+    <button mat-flat-button>
+        Inicio
+    </button>
+    <button mat-flat-button [matMenuTriggerFor]="menu">Servicios</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Tiempo real</button>
+    </mat-menu>
+    <button mat-flat-button>
+        Ayuda
+    </button>
+</mat-toolbar>

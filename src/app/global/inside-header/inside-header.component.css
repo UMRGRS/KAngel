@@ -1,0 +1,13 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header-icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
