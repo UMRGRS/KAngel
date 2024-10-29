@@ -1,5 +1,18 @@
-<app-header></app-header>
-<div class="row">
-    <div class="column"><img src="assets/users.svg" class="login-image"></div>
-    <div class="column"><app-login-form></app-login-form></div>
-</div>
+<section class="flex flex-col h-screen">
+    <app-header></app-header>
+    <div class="hidden sm:block h-full">
+        <div class="flex h-full items-center">
+            <div class="flex justify-center w-1/2">
+                <img class="h-96 ml-10" src="assets/users.svg">
+            </div>
+            <div class="w-1/2">
+                <app-login-form></app-login-form>
+            </div>
+        </div>
+    </div>
+    <div class="sm:hidden h-full flex items-center">
+        <div class="w-full mx-10">
+            <app-login-form></app-login-form>
+        </div>
+    </div>
+</section>
