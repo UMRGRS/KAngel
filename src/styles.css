@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
+
+.btn-third {
+    @apply bg-third-900 hover:bg-third-800 active:bg-third-900 px-3 py-2 rounded-xl text-white;
+}
+
 @tailwind utilities;

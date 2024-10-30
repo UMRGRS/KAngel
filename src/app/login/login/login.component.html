@@ -1,17 +1,17 @@
 <section class="flex flex-col h-screen">
     <app-header></app-header>
-    <div class="hidden sm:block h-full">
+    <div class="hidden sm:block flex-grow">
         <div class="flex h-full items-center">
-            <div class="flex justify-center w-1/2">
-                <img class="h-96 ml-10" src="assets/users.svg">
+            <div class="w-1/2 m-6">
+                <img class="h-96 mx-auto" src="assets/users.svg">
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 m-6">
                 <app-login-form></app-login-form>
             </div>
         </div>
     </div>
-    <div class="sm:hidden h-full flex items-center">
-        <div class="w-full mx-10">
+    <div class="sm:hidden flex flex-grow items-center">
+        <div class="w-full m-10">
             <app-login-form></app-login-form>
         </div>
     </div>
