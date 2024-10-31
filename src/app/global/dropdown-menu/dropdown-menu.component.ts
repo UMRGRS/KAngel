@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { ServicesMenuComponent } from "../services-menu/services-menu.component";
 
 @Component({
   selector: 'app-dropdown-menu',
   standalone: true,
-  imports: [],
+  imports: [ServicesMenuComponent],
   templateUrl: './dropdown-menu.component.html',
   styleUrl: './dropdown-menu.component.css'
 })

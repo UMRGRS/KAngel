@@ -3,12 +3,29 @@
         <img src="assets/gear.svg" class="h-8 my-auto">
         <h1 class="ml-4 my-auto text-white text-2xl font-bold">Lubetec</h1>
         <span class="mx-auto"></span>
-        <a class="btn-third me-2" href="#">
-            Inicio
-        </a>
-        <app-dropdown-menu class="me-2"></app-dropdown-menu>
-        <a class="btn-third" href="#">
-            Ayuda
-        </a>
+        <div class="hidden sm:block">
+            <div class="flex">
+                <a class="btn-third me-2" href="#">
+                    Inicio
+                </a>
+                <div class="me-2">
+                    <button id="dropdownHoverButton" data-dropdown-toggle="servicesMenuNoShrink"
+                        data-dropdown-trigger="hover" class="btn-third flex items-center" type="button">
+                        Servicios
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <app-services-menu menuId="servicesMenuNoShrink"></app-services-menu>
+                </div>
+                <a class="btn-third" href="#">
+                    Ayuda
+                </a>
+            </div>
+        </div>
+        <app-dropdown-menu class="sm:hidden"></app-dropdown-menu>
     </div>
+
 </header>
