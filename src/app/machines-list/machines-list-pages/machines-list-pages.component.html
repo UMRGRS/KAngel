@@ -1,0 +1,22 @@
+<section class="m-6">
+    <h1 class="text-white text-3xl font-bold">Lista de maquinaria</h1>
+    <div class="mt-4">
+        @for(machine of machines; track machine.id){
+        <app-machines-list-card [id]="machine.id" [machine]="machine.machine"
+            [area]="machine.area"></app-machines-list-card>
+        }
+    </div>
+    <div class="flex justify-center">
+        <div class="flex">
+            <!-- Previous Button -->
+            <a href="#" class="btn btn-neutral">
+                Anterior
+            </a>
+
+            <!-- Next Button -->
+            <a href="#" class="ms-3 btn btn-neutral">
+                Siguiente
+            </a>
+        </div>
+    </div>
+</section>
