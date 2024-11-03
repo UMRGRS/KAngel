@@ -1,0 +1,23 @@
+<section class="bg-white rounded-lg mx-6 mb-6 sm:my-6 sm:mr-6 sm:ml-2">
+    <h3 class="p-2 text-lg font-bold tracking-wide">Filtros</h3>
+    <form (submit)="filterMachines()" class="flex flex-col p-2">
+        <hr class="boder border-gray-400 my-1 mx-[-8px]">
+
+        <label for="id" class="font-semibold my-2">Identificador</label>
+        <input id="id" type="number" min="1" pattern="^[0-9]+" formControlName="identifier"
+            class="mb-4 rounded border-2 border-b-gray-400 p-2">
+        <hr class="boder border-gray-400 my-1 mx-[-8px]">
+
+        <label for="mach" class="font-semibold my-2">Maquina</label>
+        <input id="mach" type="text" formControlName="machine" class="mb-4 rounded border-2 border-b-gray-400 p-2">
+        <hr class="boder border-gray-400 my-1 mx-[-8px]">
+
+        <label for="ar" class="font-semibold my-2">Area</label>
+        <input id="ar" type="text" formControlName="area" class="mb-4 rounded border-2 border-b-gray-400 p-2">
+
+        <hr class="boder border-gray-400 my-1 mx-[-8px]">
+        <button type="submit" class="btn btn-third w-max shadow-lg mt-2">
+            Filtrar
+        </button>
+    </form>
+</section>

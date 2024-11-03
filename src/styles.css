@@ -13,5 +13,8 @@
     @apply bg-red-900 hover:bg-red-800 active:bg-red-900;
 }
 
+.btn-neutral {
+    @apply bg-second-800 hover:bg-second-700 active:bg-second-800;
+}
 
 @tailwind utilities;
