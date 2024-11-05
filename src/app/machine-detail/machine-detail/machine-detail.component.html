@@ -1,0 +1,16 @@
+<section class="flex flex-col h-screen">
+    <app-inside-header></app-inside-header>
+    <div class="flew-grow h-full">
+        <div class="flex flex-col sm:flex-row">
+            <div class="grid grid-cols-8 w-full items-center">
+                <app-machine-data class="col-span-2"></app-machine-data>
+                <app-line-chart class="col-span-3" label="Presión"></app-line-chart>
+                <app-doughnut-chart class="col-span-3" label="Tiempo trabajo/descanso"
+                    [labels]="labelsWorkRest"></app-doughnut-chart>
+                <app-doughnut-chart class="col-span-3" label="Nivel del tanque"
+                    [labels]="labelsTank"></app-doughnut-chart>
+                <app-line-chart class="col-span-3" label="Fluido"></app-line-chart>
+            </div>
+        </div>
+    </div>
+</section>
