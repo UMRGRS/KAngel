@@ -28,7 +28,7 @@ export class LineChartComponent {
         fill: 'origin',
       },
     ],
-    labels: ['02/01/2024 11:53:43', '02/01/2024 11:53:45', '02/01/2024 11:53:47', '02/01/2024 11:53:49'],
+    labels: ['11:53:43', '11:53:45', '11:53:47', '11:53:49'],
   };
 
   public lineChartOptions: ChartConfiguration['options'] = {

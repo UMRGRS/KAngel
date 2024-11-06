@@ -25,7 +25,7 @@ export class DoughnutChartComponent implements OnInit{
 
   chartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
   }
 
   public doughnutChartLabels: string[] = [

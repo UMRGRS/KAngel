@@ -2,14 +2,15 @@
     <app-inside-header></app-inside-header>
     <div class="flew-grow h-full">
         <div class="flex flex-col sm:flex-row">
-            <div class="grid grid-cols-8 w-full items-center">
-                <app-machine-data class="col-span-2"></app-machine-data>
-                <app-line-chart class="col-span-3" label="Presión"></app-line-chart>
-                <app-doughnut-chart class="col-span-3" label="Tiempo trabajo/descanso"
+            <div class="flex flex-col sm:grid sm:grid-cols-8 w-full sm:items-center">
+                <app-machine-data class="sm:col-span-3 md:col-span-2 lg:col-span-2"></app-machine-data>
+                <app-line-chart class="sm:col-span-5 md:col-span-6 lg:col-span-3 md:my-4 lg:my-0 "
+                    label="Presión"></app-line-chart>
+                <app-doughnut-chart class="sm:col-span-4 lg:col-span-3" label="Tiempo trabajo/descanso"
                     [labels]="labelsWorkRest"></app-doughnut-chart>
-                <app-doughnut-chart class="col-span-3" label="Nivel del tanque"
+                <app-doughnut-chart class="sm:col-span-4 lg:col-span-3" label="Nivel del tanque"
                     [labels]="labelsTank"></app-doughnut-chart>
-                <app-line-chart class="col-span-3" label="Fluido"></app-line-chart>
+                <app-line-chart class="sm:col-span-5 lg:col-span-3" label="Fluido"></app-line-chart>
             </div>
         </div>
     </div>
