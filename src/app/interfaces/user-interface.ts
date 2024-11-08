@@ -1,4 +1,5 @@
 export interface UserInterface {
-    expires:Date;
-    token:string;
-}
+    expiry: string
+    token: string
+  }
+  

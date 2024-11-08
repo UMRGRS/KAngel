@@ -25,17 +25,13 @@ export class SessionManagementService {
     return !!this.getSession();
   }
 
-  isTokenExpired():boolean{
+  checkTokenExpired():void{
     const session = this.getSession()
-    const tokenExpiry = session?.expires;
+    const tokenExpiry = new Date(Date.parse(session!.expiry));
     const today = new Date();
     if(tokenExpiry! > today){
-      return true;
+      this.endSession();
     }
-    else{
-      return false;
-    }
-
   }
 
 }

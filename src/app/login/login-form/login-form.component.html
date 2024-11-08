@@ -1,6 +1,6 @@
 <div class="flex flex-col w-full sm:w-3/4 mx-auto bg-gray-200 rounded-lg p-8">
     <h1 class="mb-2 font-bold text-2xl">Inicia sesión</h1>
-    <form (submit)="login()" class="flex flex-col">
+    <form (submit)="login()" [formGroup]="loginForm" class="flex flex-col">
         <input id="username" type="email" formControlName="username" placeholder="Nombre de usuario"
             class="mb-4 rounded rounded-b-none border-2 border-b-gray-400 p-2">
 
