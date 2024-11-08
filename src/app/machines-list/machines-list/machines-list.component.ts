@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InsideHeaderComponent } from "../../global/inside-header/inside-header.component";
+import { InsideHeaderComponent } from '../../global_components/inside-header/inside-header.component';
 import { MachinesListPagesComponent } from "../machines-list-pages/machines-list-pages.component";
 import { MachinesFiltersComponent } from "../machines-filters/machines-filters.component";
 

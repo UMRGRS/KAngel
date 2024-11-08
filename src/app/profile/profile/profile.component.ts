@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InsideHeaderComponent } from "../../global/inside-header/inside-header.component";
+import { InsideHeaderComponent } from '../../global_components/inside-header/inside-header.component';
 import { ProfileCardComponent } from "../profile-card/profile-card.component";
 import { QuickActionsPanelComponent } from "../quick-actions-panel/quick-actions-panel.component";
 

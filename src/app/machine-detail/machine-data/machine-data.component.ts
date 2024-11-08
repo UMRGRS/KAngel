@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataTemplateComponent } from "../../global/data-template/data-template.component";
+import { DataTemplateComponent } from '../../global_components/data-template/data-template.component';
 
 @Component({
   selector: 'app-machine-data',
