@@ -36,6 +36,24 @@ export class AuthManagementService {
     });
   }
 
+  logout(): Observable<LoginResponse>{
+    return new Observable<LoginResponse>((observer) => {
+      this.callLogoutAPI().subscribe({
+        // On successful logout, handle session
+        next: (data) => {
+          this.sessionService.endSession();
+          observer.next({ error: null, message: 'Logout successful' });
+          observer.complete();
+        },
+        // On error
+        error: (error) => {
+          observer.next({ error: error, message: 'Something went wrong'});
+          observer.complete();
+        },
+      });
+    });
+  }
+
   private callLoginAPI(username:string, password:string):Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -44,7 +62,7 @@ export class AuthManagementService {
     return this.http.post<any>(`${this.apiURL}${this.authURL}login/`, {}, { headers });
   }
 
-  private callLogoutAPI(){
+  private callLogoutAPI():Observable<any>{
     let session:UserInterface | null = this.sessionService.getSession();
 
     const headers = new HttpHeaders({

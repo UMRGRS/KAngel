@@ -20,9 +20,7 @@
                     </button>
                     <app-services-menu menuId="servicesMenuNoShrink"></app-services-menu>
                 </div>
-                <a class="btn btn-danger" href="#">
-                    Cerrar sesión
-                </a>
+                <button class="btn btn-danger" (click)="logout()">Cerrar sesión </button>
             </div>
         </div>
         <app-dropdown-menu class="sm:hidden"></app-dropdown-menu>

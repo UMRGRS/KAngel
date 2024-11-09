@@ -3,26 +3,32 @@ import { LoginComponent } from './login/login/login.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { MachinesListComponent } from './machines-list/machines-list/machines-list.component';
 import { MachineDetailComponent } from './machine-detail/machine-detail/machine-detail.component';
+import { RouteGuardService } from './global-services/route-guard.service';
+import { RouteGuardLoginService } from './global-services/route-guard-login.service';
 
 export const routes: Routes = [
     {
-        path: "",
+        path: '',
         component: LoginComponent,
-        title: "Login page"
+        title: 'Login page',
+        canActivate:[RouteGuardLoginService]
     },
     {
-        path: "profile",
+        path: 'profile',
         component: ProfileComponent,
-        title: "Profile page"
+        title: 'Profile page',
+        canActivate: [RouteGuardService]
     },
     {
-        path: "machines",
+        path: 'machines',
         component: MachinesListComponent,
-        title: "Machines page"
+        title: 'Machines page',
+        canActivate: [RouteGuardService]
     },
     {
-        path: "machine-detail",
+        path: 'machine-detail',
         component: MachineDetailComponent,
-        title: "Machine detail"
+        title: 'Machine detail',
+        canActivate: [RouteGuardService]
     }
 ];
