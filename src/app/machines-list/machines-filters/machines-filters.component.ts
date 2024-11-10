@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ApiDataService } from '../../global-services/api-data.service';
 
 @Component({
   selector: 'app-machines-filters',
@@ -10,12 +11,20 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class MachinesFiltersComponent {
   filterForm = new FormGroup({
-    identifier: new FormControl(),
     machine: new FormControl(),
     area: new FormControl()
   })
 
+  constructor(private apiService:ApiDataService){}
+
   filterMachines(){
-    
+    if(this.filterForm.valid){
+      this.apiService.getFilterMachinesList({machine:this.filterForm.value.machine, area:this.filterForm.value.area}).subscribe({
+        next: (response) => {
+          console.log(response);
+          //Add error message
+        },
+      });
+    }
   }
 }

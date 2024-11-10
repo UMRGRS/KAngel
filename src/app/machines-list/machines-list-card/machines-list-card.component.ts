@@ -9,11 +9,11 @@ import { Component, Input } from '@angular/core';
 })
 export class MachinesListCardComponent {
   @Input({required:true})
-  id:number = 0;
+  id:number | undefined = 0;
 
   @Input({required:true})
-  machine:string = "";
+  machine:string | undefined = "";
 
   @Input({required:true})
-  area:string = "";
+  area:string | undefined = "";
 }

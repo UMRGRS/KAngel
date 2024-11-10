@@ -12,7 +12,7 @@ import { ApiDataService } from '../../global-services/api-data.service';
 export class ProfileCardComponent implements OnInit{
   constructor(private apiDataService:ApiDataService){}
   ngOnInit(): void {
-    //this.apiDataService.getMachinesList().subscribe({
+    //this.apiDataService.getMachineData(2).subscribe({
     //  next:(response)=>{
     //    console.log(response)
     //  }

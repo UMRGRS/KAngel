@@ -1,6 +1,6 @@
 <section class="bg-white rounded-lg mx-6 mb-6 sm:my-6 sm:mr-6 sm:ml-2">
     <h3 class="p-2 text-lg font-bold tracking-wide">Filtros</h3>
-    <form (submit)="filterMachines()" class="flex flex-col p-2">
+    <form (submit)="filterMachines()" class="flex flex-col p-2" [formGroup]="filterForm">
         <hr class="boder border-gray-400 my-1 mx-[-8px]">
 
         <label for="mach" class="font-semibold my-2">Maquina</label>
