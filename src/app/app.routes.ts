@@ -26,7 +26,7 @@ export const routes: Routes = [
         canActivate: [RouteGuardService]
     },
     {
-        path: 'machine-detail',
+        path: 'machine-detail/:id',
         component: MachineDetailComponent,
         title: 'Machine detail',
         canActivate: [RouteGuardService]

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-services-menu',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './services-menu.component.html',
   styleUrl: './services-menu.component.css'
 })

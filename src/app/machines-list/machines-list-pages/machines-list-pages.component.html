@@ -2,8 +2,7 @@
     <h1 class="text-white text-3xl font-bold">Lista de maquinaria</h1>
     <div class="mt-4">
         @for(machine of machines; track machine.id){
-        <app-machines-list-card [id]="machine.id" [machine]="machine.machine"
-            [area]="machine.area"></app-machines-list-card>
+        <app-machines-list-card [machine]="machine"></app-machines-list-card>
         }
     </div>
     <div class="flex justify-center">

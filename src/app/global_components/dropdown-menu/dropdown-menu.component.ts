@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ServicesMenuComponent } from "../services-menu/services-menu.component";
 import { AuthManagementService } from '../../global-services/auth-management.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dropdown-menu',
   standalone: true,
-  imports: [ServicesMenuComponent],
+  imports: [ServicesMenuComponent, RouterLink],
   templateUrl: './dropdown-menu.component.html',
   styleUrl: './dropdown-menu.component.css'
 })

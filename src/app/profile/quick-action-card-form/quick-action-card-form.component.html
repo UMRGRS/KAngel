@@ -4,9 +4,10 @@
     </div>
     <hr class="border border-grey">
     <p class="px-3 my-2">Accede al panel de datos en tiempo real de la maquinaria mediante su identificador</p>
-    <form class="flex flex-col">
-        <input id="data" type="email" formControlName="username" placeholder="Identificador"
-            class="mx-3 mb-2 rounded rounded-b-none border-2 border-b-gray-400 p-2">
+    <form class="flex flex-col" [formGroup]="machineForm" (submit)="searchMachine()">
+
+        <input id="identifier" type="number" min="1" max="1000000" required formControlName="id"
+            placeholder="Identificador" class="mx-3 mb-2 rounded rounded-b-none border-2 border-b-gray-400 p-2">
 
         <button type="submit" class="btn btn-third w-max ml-2">
             Buscar

@@ -18,7 +18,7 @@ export class MachinesListPagesComponent {
     { id: 234567, machine: "Cortadora Láser", area: "Producción", error:null },
     { id: 678901, machine: "Pulidora", area: "Almacenamiento", error:null },
     { id: 789012, machine: "Impresora 3D", area: "Innovación", error:null },
-    { id: 890123, machine: "Robótica", area: "Automatización", error:null },
+    { id: 890123, machine: "Brazo robótico", area: "Automatización", error:null },
     { id: 901234, machine: "Cinta transportadora", area: "Logística", error:null },
     { id: 567890, machine: "CNC Router", area: "Diseño", error:null }
   ];

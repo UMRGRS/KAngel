@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,13 @@ import { initFlowbite } from 'flowbite';
 export class AppComponent {
   title = 'KAngel';
 
+  constructor(private router:Router){}
+
   ngOnInit(): void {
-    initFlowbite();
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {  initFlowbite();})
+      }
+    });
   }
 }

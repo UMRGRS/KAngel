@@ -1,19 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MachineResume } from '../../interfaces/machine-resume';
 
 @Component({
   selector: 'app-machines-list-card',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './machines-list-card.component.html',
   styleUrl: './machines-list-card.component.css'
 })
 export class MachinesListCardComponent {
   @Input({required:true})
-  id:number | undefined = 0;
-
-  @Input({required:true})
-  machine:string | undefined = "";
-
-  @Input({required:true})
-  area:string | undefined = "";
+  machine:MachineResume | undefined;
 }

@@ -6,6 +6,9 @@ import { DoughnutChartComponent } from "../doughnut-chart/doughnut-chart.compone
 import { WebSocketService } from '../../global-services/websocket.service';
 import { SessionManagementService } from '../../global-services/session-management.service';
 import { UserInterface } from '../../interfaces/user-interface';
+import { ApiDataService } from '../../global-services/api-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { MachineResume } from '../../interfaces/machine-resume';
 
 @Component({
   selector: 'app-machine-detail',
@@ -18,18 +21,27 @@ export class MachineDetailComponent implements OnInit, OnDestroy{
 
   labelsWorkRest:string[] = ["Tiempo de trabajo", "Tiempo de descanso"]
   labelsTank:string[] = ["Vació", "Fluido"]
+  machineID = -1;
+  machineData:MachineResume | undefined;
 
-  constructor(private websocketService: WebSocketService, private sessionService:SessionManagementService) {}
+  constructor(private websocketService: WebSocketService, private sessionService:SessionManagementService, 
+    private apiService:ApiDataService, private activatedRoute:ActivatedRoute) {
+      this.machineID = Number(this.activatedRoute.snapshot.params["id"])
+    }
+  ngOnInit() {
+    this.apiService.getMachineData(this.machineID).subscribe({
+      next:(data)=>{
+        console.log(data);
+      },
+      error:(error)=>{
+        console.log(error);
+      }
+    });
+    let session:UserInterface | null = this.sessionService.getSession();
+    this.websocketService.connect(`wss://intent-smoothly-collie.ngrok-free.app/ws/machine-realtime/${this.machineID}?token=${session?.token}`);
+  }
+
   ngOnDestroy(): void {
     
-  }
-
-  ngOnInit() {
-    let session:UserInterface | null = this.sessionService.getSession();
-    this.websocketService.connect(`wss://intent-smoothly-collie.ngrok-free.app/ws/machine-realtime/2?token=${session?.token}`);
-  }
-
-  sendMessage() {
-    this.websocketService.sendMessage('Hello, server!');
   }
 }

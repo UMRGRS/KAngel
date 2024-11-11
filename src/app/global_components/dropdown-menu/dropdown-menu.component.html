@@ -10,7 +10,7 @@
     class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownShrinkMenuHoverButton">
         <li>
-            <a href="profile" class="block px-4 py-2 hover:bg-gray-100">
+            <a routerLink="/profile" class="block px-4 py-2 hover:bg-gray-100">
                 Inicio
             </a>
         </li>
@@ -28,7 +28,7 @@
             <app-services-menu menuId="servicesMenuShrink"></app-services-menu>
         </li>
         <li>
-            <button href="profile" class="block px-4 py-2 hover:bg-gray-100" (click)="logout()">
+            <button class="block px-4 py-2 hover:bg-gray-100" (click)="logout()">
                 Cerrar sesión
             </button>
         </li>
