@@ -9,8 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 export class DataTemplateComponent {
   @Input({ required: true }) 
-  title:string = "";
+  title:string | undefined;
 
   @Input({ required: true })
-  data:string = "";
+  data:string | undefined;
 }

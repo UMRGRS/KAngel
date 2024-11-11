@@ -1,9 +1,9 @@
 <section class="bg-white rounded-lg m-6 pb-1">
-    <img src="assets/bimbo-logo.png"
+    <img [src]="profileData?.company?.logo_url"
         class="w-full h-52 object-cover object-center rounded-lg rounded-b-none border border-b-gray-400">
     <h1 class="m-2 text-lg font-bold tracking-wide">Bienvenido</h1>
-    <app-data-template title="Empresa" data="Empresa 1"></app-data-template>
-    <app-data-template title="Usuario" data="John Doe"></app-data-template>
-    <app-data-template title="Correo electrónico" data="JohnDoe@gmail.com"></app-data-template>
-    <app-data-template title="Teléfono de contacto" data="+52 6145678909"></app-data-template>
+    <app-data-template title="Empresa" [data]="profileData?.company?.name"></app-data-template>
+    <app-data-template title="Usuario" [data]="profileData?.username"></app-data-template>
+    <app-data-template title="Correo electrónico" [data]="profileData?.company?.email"></app-data-template>
+    <app-data-template title="Teléfono de contacto" [data]="profileData?.company?.phone"></app-data-template>
 </section>
