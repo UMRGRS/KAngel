@@ -25,7 +25,8 @@ export class ApiDataService {
         // On successful logout, handle session
         next: (data) => {
           observer.next({ 
-            error: null, id:data['id'], 
+            error: null, 
+            id:data['id'], 
             username:data['username'],
             company:{
               id:data['company']['id'],
@@ -46,9 +47,9 @@ export class ApiDataService {
     });
   }
 
-  getMachinesList():Observable<MachineList>{
+  getMachinesList(nextPrevUrl:string | undefined):Observable<MachineList>{
     return new Observable<MachineList>((observer) => {
-      this.machinesListAPICall().subscribe({
+      this.machinesListAPICall(nextPrevUrl).subscribe({
 
         next: (data) => {
           var machines = [];
@@ -64,7 +65,7 @@ export class ApiDataService {
           observer.next({ 
             error: null,
             next:data['next'],
-            previous:data['next'],
+            previous:data['previous'],
             results:machines
           });
           observer.complete();
@@ -144,14 +145,21 @@ export class ApiDataService {
     return this.http.get<any>(`${this.apiURL}${this.authURL}user/`, { headers });
   }
 
-  private machinesListAPICall(){
+  private machinesListAPICall(nextPrevUrl:string | undefined){
     let session:UserInterface | null = this.sessionService.getSession();
+
+    let url:string = `${this.apiURL}${this.machineURL}machines`
+
+    if (nextPrevUrl != undefined){
+      url = nextPrevUrl.replace("http://", "https://");
+      
+    }
 
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + session?.token,
       "ngrok-skip-browser-warning": "69420",
     });
-    return this.http.get<any>(`${this.apiURL}${this.machineURL}machines`, { headers });
+    return this.http.get<any>(url, { headers });
   }
 
   private filterMachinesListAPICall(query?:{machine?:string, area?:string}){
@@ -170,7 +178,9 @@ export class ApiDataService {
     else{
       let appendString = '?'
       for (const [key, value] of Object.entries(query)) {
-        appendString = appendString + key + "=" + encodeURIComponent(value) + "&"
+        if(value != undefined){
+          appendString = appendString + key + "=" + encodeURIComponent(value) + "&"
+        }
       }
       appendString = appendString.slice(0, -1);
       appendString = appendString;

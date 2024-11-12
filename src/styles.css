@@ -17,4 +17,9 @@
     @apply bg-second-800 hover:bg-second-700 active:bg-second-800;
 }
 
+.btn:disabled{
+    @apply bg-gray-300 text-gray-500 opacity-50;
+    cursor: not-allowed;
+}
+
 @tailwind utilities;

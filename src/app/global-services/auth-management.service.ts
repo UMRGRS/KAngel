@@ -12,7 +12,6 @@ import { UserInterface } from '../interfaces/user-interface';
 export class AuthManagementService {
   private apiURL = environment.apiURL;
   private authURL = environment.authURL;
-  private expiryTimer: any;
 
   constructor(private http: HttpClient, private sessionService:SessionManagementService) {}
 
@@ -23,7 +22,6 @@ export class AuthManagementService {
         // On successful login, handle session
         next: (data) => {
           this.sessionService.setSession({ expiry: data["expiry"], token: data["token"] });
-          this.expiryTimer = setInterval(() => { this.sessionService.checkTokenExpired(); }, 60000);
           observer.next({ error: null, message: 'Login successful' });
           observer.complete();
         },

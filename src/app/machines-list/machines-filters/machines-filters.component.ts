@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ApiDataService } from '../../global-services/api-data.service';
+import { MachineList } from '../../interfaces/machine-list';
 
 @Component({
   selector: 'app-machines-filters',
@@ -15,14 +16,18 @@ export class MachinesFiltersComponent {
     area: new FormControl()
   })
 
+  @Input({required:true}) machineList:MachineList | undefined;
+  @Output() machineListChange = new EventEmitter<MachineList>();
+
   constructor(private apiService:ApiDataService){}
 
   filterMachines(){
     if(this.filterForm.valid){
       this.apiService.getFilterMachinesList({machine:this.filterForm.value.machine, area:this.filterForm.value.area}).subscribe({
         next: (response) => {
-          console.log(response);
-          //Add error message
+          if(response.error == null){
+            this.machineListChange.emit(response);
+          }
         },
       });
     }

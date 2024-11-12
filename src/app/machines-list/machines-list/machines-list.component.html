@@ -3,10 +3,11 @@
     <div class="flew-grow h-full">
         <div class="flex flex-col sm:flex-row">
             <div class="w-full md:w-8/12 lg:w-9/12 xl:w-4/5">
-                <app-machines-list-pages></app-machines-list-pages>
+                <app-machines-list-pages [machines]="machineList"></app-machines-list-pages>
             </div>
             <div class="w-full md:w-4/12 lg :w-3/12 xl:w-1/5">
-                <app-machines-filters></app-machines-filters>
+                <app-machines-filters [(machineList)]="machineList"
+                    (machineListChange)="handleEvent($event)"></app-machines-filters>
             </div>
         </div>
     </div>

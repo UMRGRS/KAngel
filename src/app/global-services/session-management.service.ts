@@ -24,14 +24,4 @@ export class SessionManagementService {
   isAuthenticated():boolean{
     return !!this.getSession();
   }
-
-  checkTokenExpired():void{
-    const session = this.getSession()
-    const tokenExpiry = new Date(Date.parse(session!.expiry));
-    const today = new Date();
-    if(tokenExpiry! > today){
-      this.endSession();
-    }
-  }
-
 }

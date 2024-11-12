@@ -1,21 +1,21 @@
 <section class="m-6">
     <h1 class="text-white text-3xl font-bold">Lista de maquinaria</h1>
     <div class="mt-4">
-        @for(machine of machines; track machine.id){
+        @for(machine of machines?.results; track machine.id){
         <app-machines-list-card [machine]="machine"></app-machines-list-card>
         }
     </div>
     <div class="flex justify-center">
         <div class="flex">
             <!-- Previous Button -->
-            <a href="#" class="btn btn-neutral">
+            <button [disabled]="isPrevDisable" class="btn btn-neutral" (click)="changeMachineList(machines?.previous)">
                 Anterior
-            </a>
+            </button>
 
             <!-- Next Button -->
-            <a href="#" class="ms-3 btn btn-neutral">
+            <button [disabled]="isNextDisable" class="ms-3 btn btn-neutral" (click)="changeMachineList(machines?.next)">
                 Siguiente
-            </a>
+            </button>
         </div>
     </div>
 </section>
