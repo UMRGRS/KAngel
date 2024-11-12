@@ -8,12 +8,14 @@
     <div class="flex justify-center">
         <div class="flex">
             <!-- Previous Button -->
-            <button [disabled]="isPrevDisable" class="btn btn-neutral" (click)="changeMachineList(machines?.previous)">
+            <button [disabled]="!!!machines?.previous" class="btn btn-neutral"
+                (click)="changeMachineList(machines?.previous)">
                 Anterior
             </button>
 
             <!-- Next Button -->
-            <button [disabled]="isNextDisable" class="ms-3 btn btn-neutral" (click)="changeMachineList(machines?.next)">
+            <button [disabled]="!!!machines?.next" class="ms-3 btn btn-neutral"
+                (click)="changeMachineList(machines?.next)">
                 Siguiente
             </button>
         </div>

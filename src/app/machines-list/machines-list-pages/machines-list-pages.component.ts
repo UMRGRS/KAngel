@@ -18,6 +18,7 @@ export class MachinesListPagesComponent implements OnInit{
   constructor(private apiDataService:ApiDataService){}
 
   ngOnInit(): void {
+    
     this.apiDataService.getMachinesList(undefined).subscribe({
       next:(response)=>{
         if(response.error == null){
