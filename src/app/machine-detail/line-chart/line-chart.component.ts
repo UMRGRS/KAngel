@@ -9,27 +9,12 @@ import { BaseChartDirective } from 'ng2-charts';
   standalone: true,
   imports: [BaseChartDirective],
 })
-export class LineChartComponent {
+export class LineChartComponent{
+  @Input({required:true})
+  charData:ChartConfiguration['data'] | undefined;
+
   @Input({required:true})
   label:string = "";
-  
-  public lineChartData: ChartConfiguration['data'] = {
-    datasets: [
-      { 
-        //Change to relevant data
-        data: [65, 59, 80, 81, 56, 55, 40],
-        label: 'Presión',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: 'rgba(148,159,177,1)',
-        pointBackgroundColor: 'rgba(148,159,177,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-        fill: 'origin',
-      },
-    ],
-    labels: ['11:53:43', '11:53:45', '11:53:47', '11:53:49'],
-  };
 
   public lineChartOptions: ChartConfiguration['options'] = {
     elements: {
@@ -47,6 +32,9 @@ export class LineChartComponent {
     plugins: {
       legend: { display: false },
     },
+    animation: {
+      duration: 800
+    }
   };
 
   public lineChartType: ChartType = 'line';

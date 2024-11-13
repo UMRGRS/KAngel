@@ -1,24 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class WebSocketService {
+export class WebSocketService implements OnDestroy {
   private ws!: WebSocket;
+  private messageSubject = new Subject<string>();
+
+  public messages$: Observable<string> = this.messageSubject.asObservable();
 
   connect(url: string) {
     this.ws = new WebSocket(url);
 
     this.ws.onopen = (event) => {
-      console.log('WebSocket connection opened:', event);
+      console.log('WebSocket connection opened');
     };
 
     this.ws.onmessage = (event) => {
-      console.log('Message received:', event.data);
+      this.messageSubject.next(event.data);
     };
 
     this.ws.onclose = (event) => {
-      console.log('WebSocket connection closed:', event);
+      console.log('WebSocket connection closed');
     };
 
     this.ws.onerror = (error) => {
@@ -26,17 +30,10 @@ export class WebSocketService {
     };
   }
 
-  sendMessage(message: string) {
-    if (this.ws.readyState === WebSocket.OPEN) {
-      this.ws.send(message);
-    } else {
-      console.error('WebSocket is not open. Ready state:', this.ws.readyState);
-    }
-  }
-
   ngOnDestroy() {
     if (this.ws) {
       this.ws.close();
     }
+    this.messageSubject.complete();
   }
 }

@@ -3,14 +3,20 @@
     <div class="flew-grow h-full">
         <div class="flex flex-col sm:flex-row">
             <div class="flex flex-col sm:grid sm:grid-cols-8 w-full sm:items-center">
-                <app-machine-data class="sm:col-span-3 md:col-span-2 lg:col-span-2"></app-machine-data>
-                <app-line-chart class="sm:col-span-5 md:col-span-6 lg:col-span-3 md:my-4 lg:my-0 "
-                    label="Presión"></app-line-chart>
+                <app-machine-data class="sm:col-span-3 md:col-span-2 lg:col-span-2"
+                    [machineData]="machineData"></app-machine-data>
+
+                <app-line-chart class="sm:col-span-5 md:col-span-6 lg:col-span-3 md:my-4 lg:my-0 " label="Presión"
+                    [charData]="pressureChartData"></app-line-chart>
+
                 <app-doughnut-chart class="sm:col-span-4 lg:col-span-3" label="Tiempo trabajo/descanso"
-                    [labels]="labelsWorkRest"></app-doughnut-chart>
+                    [doughnutChartData]="workStopChartData"></app-doughnut-chart>
+
                 <app-doughnut-chart class="sm:col-span-4 lg:col-span-3" label="Nivel del tanque"
-                    [labels]="labelsTank"></app-doughnut-chart>
-                <app-line-chart class="sm:col-span-5 lg:col-span-3" label="Fluido"></app-line-chart>
+                    [doughnutChartData]="tankLevelChartData"></app-doughnut-chart>
+
+                <app-line-chart class="sm:col-span-5 lg:col-span-3" label="Fluido"
+                    [charData]="fluidChartData"></app-line-chart>
             </div>
         </div>
     </div>
